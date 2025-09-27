@@ -19,9 +19,6 @@ package-lock.json
 # Ignore folders related to IDEs
 .vscode/
 
-# Ignore auxiliary files
-markdown_generator/
-
 # environment file
 .venv/
 .python-version
