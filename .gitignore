@@ -16,6 +16,9 @@ package-lock.json
 /vendor/
 .bundle/
 
+# Ignore auxiliary files
+markdown_generator/
+
 # Ignore folders related to IDEs
 .vscode/
 
