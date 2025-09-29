@@ -24,7 +24,7 @@ repository               : "Chaos1025/Chaos1025.github.io" # the repository of y
 author:
   # Biographic information
   avatar           : "profile.jpg"
-  name             : "Xu Chenyu"
+  name             : "Chenyu Xu"
   pronouns         : "he/his" # example: "she/her"  
   bio              : "Master Student in School of Electronic Science and Engineering of Nanjing University"
   location         : "Nanjing, China"
@@ -38,10 +38,10 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=1p_L1ZIAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : # URL - Update with the correct link to your profile
+  orcid            : "https://orcid.org/0009-0008-3176-2813" # URL - Update with the correct link to your profile
   semantic         : # URL
   pubmed           : # URL
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Chenyu-Xu-20" # URL
   scopus           : # URL
 
   # Repositories and software development
@@ -84,11 +84,11 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
+    title: 'Journal Articles'
   preprints:
     title: 'Preprints'
+  conferences:
+    title: 'Conference Papers'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

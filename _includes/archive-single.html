@@ -42,6 +42,39 @@
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          
+          <!-- 作者列表显示 -->
+          {% if post.authors %}
+            <p class="archive__item-authors">
+              {% assign site_author = site.author.name | downcase | strip %}
+              {% for author in post.authors %}
+                {% assign author_clean = author.name | downcase | strip %}
+                {% assign author_display = author.name %}
+                
+                <!-- 如果是网站作者，加粗显示 -->
+                {% if author_clean contains site_author or site_author contains author_clean %}
+                  {% assign author_display = "<strong>" | append: author.name | append: "</strong>" %}
+                {% endif %}
+                
+                <!-- 添加共一作者标注 -->
+                {% if author.equal_contribution %}
+                  {% assign author_display = author_display | append: "<sup>‡</sup>" %}
+                {% endif %}
+                
+                <!-- 添加通讯作者标注 -->
+                {% if author.corresponding %}
+                  {% assign author_display = author_display | append: "<sup>*</sup>" %}
+                {% endif %}
+                
+                <!-- 输出作者姓名 -->
+                {{ author_display }}
+                
+                <!-- 添加分隔符 -->
+                {% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </p>
+          {% endif %}
+          
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
@@ -78,6 +111,21 @@
       <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.bibtexurl %}
       <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% endif %}
+
+    {% if post.collection == 'publications' and post.authors %}
+      <p class="archive__item-author-legend" style="font-size: 0.9em; color: #666; margin-top: -10px;">
+        {% assign has_equal = false %}
+        {% assign has_corresponding = false %}
+        {% for author in post.authors %}
+          {% if author.equal_contribution %}{% assign has_equal = true %}{% endif %}
+          {% if author.corresponding %}{% assign has_corresponding = true %}{% endif %}
+        {% endfor %}
+        
+        {% if has_equal %}<sup>‡</sup>Equal contribution{% endif %}
+        {% if has_equal and has_corresponding %} | {% endif %}
+        {% if has_corresponding %}<sup>*</sup>Corresponding author{% endif %}
+      </p>
     {% endif %}
 
   </article>
