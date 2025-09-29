@@ -14,8 +14,8 @@ Education
 * M.S. in Nanjing, Nanjing University, 2024 - now
 * B.S. in Nanjing, Nanjing University, 2020 - 2024
 
-Work experience
-======
+<!-- Work experience
+====== -->
 <!-- * Spring 2024: Academic Pages Collaborator
   * GitHub University
   * Duties includes: Updates and improvements to template
@@ -58,6 +58,7 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
    -->
-Service and leadership
+
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
