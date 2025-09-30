@@ -11,8 +11,8 @@ redirect_from:
 
 Education
 ======
-* M.S. in Nanjing, Nanjing University, 2024 - now
-* B.S. in Nanjing, Nanjing University, 2020 - 2024
+* M.S. in School of Electronic Science and Technology, Nanjing University, 2024 - now
+* B.S. in School of Electronic Science and Technology, Nanjing University, 2020 - 2024
 
 <!-- Work experience
 ====== -->
