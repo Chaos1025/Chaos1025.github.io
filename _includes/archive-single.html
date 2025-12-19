@@ -33,6 +33,42 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
+
+    <!-- 特殊标记显示 -->
+    {% if post.highlights %}
+      <div class="archive__item-highlights" style="margin-bottom: 0.5em;">
+        {% for highlight in post.highlights %}
+          {% case highlight.type %}
+            {% when 'cover' %}
+              <span class="highlight-badge highlight-cover" title="Cover Article">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span style="margin-left: 0.25em;">{{ highlight.label | default: "Cover" }}</span>
+              </span>
+            {% when 'editorial' %}
+              <span class="highlight-badge highlight-editorial" title="Editorial Pick">
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                <span style="margin-left: 0.25em;">{{ highlight.label | default: "Editorial Pick" }}</span>
+              </span>
+            {% when 'featured' %}
+              <span class="highlight-badge highlight-featured" title="Featured Article">
+                <i class="fa fa-trophy" aria-hidden="true"></i>
+                <span style="margin-left: 0.25em;">{{ highlight.label | default: "Featured" }}</span>
+              </span>
+            {% when 'award' %}
+              <span class="highlight-badge highlight-award" title="Award Winning">
+                <i class="fa fa-award" aria-hidden="true"></i>
+                <span style="margin-left: 0.25em;">{{ highlight.label | default: "Award" }}</span>
+              </span>
+            {% else %}
+              <span class="highlight-badge highlight-custom" title="{{ highlight.label | default: highlight.type }}">
+                <i class="fa fa-tag" aria-hidden="true"></i>
+                <span style="margin-left: 0.25em;">{{ highlight.label | default: highlight.type }}</span>
+              </span>
+          {% endcase %}
+          {% unless forloop.last %} {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
     
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>

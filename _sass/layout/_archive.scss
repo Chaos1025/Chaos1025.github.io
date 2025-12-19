@@ -243,3 +243,66 @@
     }
   }
 }
+
+/* ==========================================================================
+   Publication Highlights Badges
+   ========================================================================== */
+
+.archive__item-highlights {
+  margin: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.6em;
+  font-size: 0.7em;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  i {
+    font-size: 0.9em;
+  }
+}
+
+.highlight-cover {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border: 1px solid #e6c200;
+}
+
+.highlight-editorial {
+  background: linear-gradient(45deg, #ff6b6b, #ff8787);
+  color: white;
+  border: 1px solid #ff5252;
+}
+
+.highlight-featured {
+  background: linear-gradient(45deg, #4ecdc4, #44a3aa);
+  color: white;
+  border: 1px solid #2e8b85;
+}
+
+.highlight-award {
+  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  color: white;
+  border: 1px solid #7d3c98;
+}
+
+.highlight-custom {
+  background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+  color: white;
+  border: 1px solid #707b7c;
+}
