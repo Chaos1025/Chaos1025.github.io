@@ -11,8 +11,15 @@ redirect_from:
 
 Education
 ======
-* M.S. in School of Electronic Science and Technology, Nanjing University, 2024 - now
-* B.S. in School of Electronic Science and Technology, Nanjing University, 2020 - 2024
+* 2024 - Present, M.S. in School of Electronic Science and Technology
+  * Nanjing University
+  * Major: Signal and Information Processing
+  * Supervisor: Prof. Zhou and Prof. Cao
+
+* 2020 - 2024, B.S. in School of Electronic Science and Technology
+  * Nanjing University
+  * Major: Electronic Information Science and Technology
+  * Supervisor: Prof. Zhou and Prof. Cao
 
 <!-- Work experience
 ====== -->
@@ -46,17 +53,18 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
+Teaching
+======
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
 <!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
    -->
 
 <!-- Service and leadership
