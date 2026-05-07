@@ -96,6 +96,28 @@
     font-size: $type-size-6;
   }
 
+  .news-board {
+    height: 9.5em;
+    margin: 1em 0 2em;
+    padding: 1em 1.25em;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background-color: var(--global-bg-color);
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 1.25em;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .small {
     font-size: $type-size-6;
   }

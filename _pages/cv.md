@@ -14,12 +14,12 @@ Education
 * 2024 - Present, M.S. in School of Electronic Science and Technology
   * Nanjing University
   * Major: Signal and Information Processing
-  * Supervisor: Prof. Zhou and Prof. Cao
+  * Supervisor: Prof. You Zhou and Prof. Xun Cao
 
 * 2020 - 2024, B.S. in School of Electronic Science and Technology
   * Nanjing University
   * Major: Electronic Information Science and Technology
-  * Supervisor: Prof. Zhou and Prof. Cao
+  * Supervisor: Prof. You Zhou and Prof. Xun Cao
 
 <!-- Work experience
 ====== -->
