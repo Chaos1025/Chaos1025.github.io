@@ -145,25 +145,29 @@
   </div>
   {% endif %}
   
-  {% if cv.publications.size > 0 %}
+  {% if site.publications.size > 0 %}
   <!-- Publications -->
   <div class="cv-section">
     <h2>Publications</h2>
     <ul class="cv-list">
-      {% for publication in cv.publications %}
+      {% for publication in site.publications reversed %}
       <li class="cv-item">
         <div class="cv-item-header">
-          <div class="cv-item-title">{{ publication.name }}</div>
-          <div class="cv-item-date">{{ publication.releaseDate | slice: 0, 4 }}</div>
+          <div class="cv-item-title">
+            <a href="{{ base_path }}{{ publication.url }}">{{ publication.title }}</a>
+          </div>
+          <div class="cv-item-date">{{ publication.date | date: "%Y" }}</div>
         </div>
         <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ publication.publisher }}</div>
-          {% if publication.summary %}
-          <div class="cv-item-detail">{{ publication.summary }}</div>
+          {% if publication.venue %}
+          <div class="cv-item-subtitle">{{ publication.venue }}</div>
           {% endif %}
-          {% if publication.website %}
+          {% if publication.citation %}
+          <div class="cv-item-detail">{{ publication.citation }}</div>
+          {% endif %}
+          {% if publication.paperurl %}
           <div class="cv-item-detail">
-            <a href="{{ publication.website }}" target="_blank">View Publication</a>
+            <a href="{{ publication.paperurl }}" target="_blank">View Publication</a>
           </div>
           {% endif %}
         </div>
@@ -199,24 +203,26 @@
   </div>
   {% endif %}
   
-  {% if cv.teaching.size > 0 %}
+  {% if site.teaching.size > 0 %}
   <!-- Teaching -->
   <div class="cv-section">
     <h2>Teaching</h2>
     <ul class="cv-list">
-      {% for teaching in cv.teaching %}
+      {% for teaching in site.teaching reversed %}
       <li class="cv-item">
         <div class="cv-item-header">
-          <div class="cv-item-title">{{ teaching.course }}</div>
-          <div class="cv-item-date">{{ teaching.date | slice: 0, 4 }}</div>
+          <div class="cv-item-title">{{ teaching.title }}</div>
+          <div class="cv-item-date">{{ teaching.date | date: "%Y" }}</div>
         </div>
         <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ teaching.institution }}</div>
-          {% if teaching.role %}
-          <div class="cv-item-detail">Role: {{ teaching.role }}</div>
+          {% if teaching.venue %}
+          <div class="cv-item-subtitle">{{ teaching.venue }}</div>
           {% endif %}
-          {% if teaching.description %}
-          <div class="cv-item-detail">{{ teaching.description }}</div>
+          {% if teaching.type %}
+          <div class="cv-item-detail">Role: {{ teaching.type }}</div>
+          {% endif %}
+          {% if teaching.content %}
+          <div class="cv-item-detail">{{ teaching.content | markdownify }}</div>
           {% endif %}
         </div>
       </li>
