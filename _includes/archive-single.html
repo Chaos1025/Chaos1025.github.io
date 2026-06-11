@@ -77,7 +77,11 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y-%m" }} </p>
+          {% if post.category == 'preprints' %}
+            <p>Preprint in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y-%m" }} </p>
+          {% else %}
+            <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y-%m" }} </p>
+          {% endif %}
           
           <!-- 作者列表显示 -->
           {% if post.authors %}
