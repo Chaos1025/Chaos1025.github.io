@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 450" role="img" aria-labelledby="title desc" style="background: #ffffff;">
+  <title id="title">Phase-space sampling comparison between LFM and FLFM</title>
+  <desc id="desc">A simplified x-u phase-space diagram comparing LFM and FLFM. LFM samples a few spatial positions densely along the angular coordinate, while FLFM samples a few angular channels densely along the spatial coordinate.</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --ink: #000000;
+      --grid: rgba(0, 0, 0, 0.18);
+      --axis: #000000;
+      --lfm: #2a78d6;
+      --flfm: #1b8f68;
+      --panel-border: rgba(0, 0, 0, 0.22);
+      --point-ring: #ffffff;
+    }
+    svg {
+      background: var(--bg);
+    }
+    text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: var(--ink);
+    }
+    .panel-title { font-size: 24px; font-weight: 700; }
+    .axis-label { font-size: 18px; font-style: italic; }
+    .range-label { font-size: 17px; font-style: italic; }
+    .grid-line { stroke: var(--grid); stroke-width: 1; vector-effect: non-scaling-stroke; }
+    .axis { stroke: var(--axis); stroke-width: 1.8; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+    .range-bracket { fill: none; stroke: var(--axis); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+    .panel-border { fill: none; stroke: var(--panel-border); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+    .sampling-band { stroke-width: 10; stroke-linecap: round; opacity: 0.22; vector-effect: non-scaling-stroke; }
+    .sample-point { stroke: var(--point-ring); stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--axis)" />
+    </marker>
+  </defs>
+
+  <!-- LFM panel -->
+  <g transform="translate(72 30)">
+    <rect x="0" y="0" width="420" height="390" rx="22" class="panel-border" />
+    <text x="210" y="42" text-anchor="middle" class="panel-title">LFM</text>
+
+    <g transform="translate(100 78)">
+      <!-- square grid: 240 × 240 -->
+      <path d="M 0 0 V 240 M 40 0 V 240 M 80 0 V 240 M 120 0 V 240 M 160 0 V 240 M 200 0 V 240 M 240 0 V 240" class="grid-line" />
+      <path d="M 0 0 H 240 M 0 40 H 240 M 0 80 H 240 M 0 120 H 240 M 0 160 H 240 M 0 200 H 240 M 0 240 H 240" class="grid-line" />
+
+      <!-- axes -->
+      <line x1="0" y1="240" x2="264" y2="240" class="axis" marker-end="url(#arrow)" />
+      <line x1="0" y1="240" x2="0" y2="-24" class="axis" marker-end="url(#arrow)" />
+      <text x="272" y="247" class="axis-label">x</text>
+      <text x="-18" y="-30" class="axis-label">u</text>
+
+      <!-- range brackets -->
+      <path d="M -34 30 H -22 M -34 30 V 210 M -34 210 H -22" class="range-bracket" />
+      <text x="-62" y="120" text-anchor="middle" class="range-label" transform="rotate(-90 -62 120)">N<tspan baseline-shift="sub" font-size="12">angle</tspan></text>
+
+      <path d="M 60 270 V 258 M 60 270 H 180 M 180 270 V 258" class="range-bracket" />
+      <text x="120" y="307" text-anchor="middle" class="range-label">N<tspan baseline-shift="sub" font-size="12">space</tspan></text>
+
+      <!-- LFM: dense angular columns, sparse spatial samples -->
+      <line x1="60" y1="30" x2="60" y2="210" stroke="var(--lfm)" class="sampling-band" />
+      <line x1="120" y1="30" x2="120" y2="210" stroke="var(--lfm)" class="sampling-band" />
+      <line x1="180" y1="30" x2="180" y2="210" stroke="var(--lfm)" class="sampling-band" />
+
+      <circle cx="60" cy="30" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="60" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="90" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="120" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="150" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="180" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="60" cy="210" r="6.5" fill="var(--lfm)" class="sample-point" />
+
+      <circle cx="120" cy="30" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="60" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="90" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="120" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="150" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="180" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="120" cy="210" r="6.5" fill="var(--lfm)" class="sample-point" />
+
+      <circle cx="180" cy="30" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="60" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="90" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="120" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="150" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="180" r="6.5" fill="var(--lfm)" class="sample-point" />
+      <circle cx="180" cy="210" r="6.5" fill="var(--lfm)" class="sample-point" />
+    </g>
+  </g>
+
+  <!-- FLFM panel -->
+  <g transform="translate(548 30)">
+    <rect x="0" y="0" width="420" height="390" rx="22" class="panel-border" />
+    <text x="210" y="42" text-anchor="middle" class="panel-title">FLFM</text>
+
+    <g transform="translate(100 78)">
+      <!-- square grid: 240 × 240 -->
+      <path d="M 0 0 V 240 M 40 0 V 240 M 80 0 V 240 M 120 0 V 240 M 160 0 V 240 M 200 0 V 240 M 240 0 V 240" class="grid-line" />
+      <path d="M 0 0 H 240 M 0 40 H 240 M 0 80 H 240 M 0 120 H 240 M 0 160 H 240 M 0 200 H 240 M 0 240 H 240" class="grid-line" />
+
+      <!-- axes -->
+      <line x1="0" y1="240" x2="264" y2="240" class="axis" marker-end="url(#arrow)" />
+      <line x1="0" y1="240" x2="0" y2="-24" class="axis" marker-end="url(#arrow)" />
+      <text x="272" y="247" class="axis-label">x</text>
+      <text x="-18" y="-30" class="axis-label">u</text>
+
+      <!-- range brackets -->
+      <path d="M -34 60 H -22 M -34 60 V 180 M -34 180 H -22" class="range-bracket" />
+      <text x="-62" y="120" text-anchor="middle" class="range-label" transform="rotate(-90 -62 120)">N<tspan baseline-shift="sub" font-size="12">angle</tspan></text>
+
+      <path d="M 30 270 V 258 M 30 270 H 210 M 210 270 V 258" class="range-bracket" />
+      <text x="120" y="307" text-anchor="middle" class="range-label">N<tspan baseline-shift="sub" font-size="12">space</tspan></text>
+
+      <!-- FLFM: dense spatial rows, sparse angular samples -->
+      <line x1="30" y1="60" x2="210" y2="60" stroke="var(--flfm)" class="sampling-band" />
+      <line x1="30" y1="120" x2="210" y2="120" stroke="var(--flfm)" class="sampling-band" />
+      <line x1="30" y1="180" x2="210" y2="180" stroke="var(--flfm)" class="sampling-band" />
+
+      <circle cx="30" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="60" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="90" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="120" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="150" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="180" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="210" cy="60" r="6.5" fill="var(--flfm)" class="sample-point" />
+
+      <circle cx="30" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="60" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="90" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="120" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="150" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="180" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="210" cy="120" r="6.5" fill="var(--flfm)" class="sample-point" />
+
+      <circle cx="30" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="60" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="90" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="120" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="150" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="180" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+      <circle cx="210" cy="180" r="6.5" fill="var(--flfm)" class="sample-point" />
+    </g>
+  </g>
+</svg>
