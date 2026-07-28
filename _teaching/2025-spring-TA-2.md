@@ -1,7 +1,7 @@
 ---
-title: "Teaching Assitant, Artificial Intelligence in Biomedical Imaging and Image Processing"
+title: "Artificial Intelligence in Biomedical Imaging and Image Processing"
 collection: "teaching assitant"
-type: "Undergraduate course"
+type: "Teaching Assitant"
 permalink: /teaching/2025-spring-TA-2
 venue: "Nanjing University"
 date: 2025-03-01

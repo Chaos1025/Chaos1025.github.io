@@ -1,7 +1,7 @@
 ---
-title: "Teaching Assitant, Fundamental Electrical Experiments"
+title: "Fundamental Electrical Experiments"
 collection: "teaching assitant"
-type: "Undergraduate course"
+type: "Teaching Assitant"
 permalink: /teaching/2024-autumn-TA-1
 venue: "Nanjing University"
 date: 2024-09-01

@@ -11,12 +11,12 @@ redirect_from:
 
 Education
 ======
-* 2024 - Present, M.Phil. in School of Electronic Science and Technology
+* 2024 - Present, M.S. in School of Electronic Science and Engineering
   * Nanjing University
   * Major: Signal and Information Processing
   * Supervisor: Prof. You Zhou and Prof. Xun Cao
 
-* 2020 - 2024, B.S. in School of Electronic Science and Technology
+* 2020 - 2024, B.S. in School of Electronic Science and Engineering
   * Nanjing University
   * Major: Electronic Information Science and Technology
   * Supervisor: Prof. You Zhou and Prof. Xun Cao
